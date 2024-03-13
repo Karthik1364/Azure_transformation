@@ -14,7 +14,7 @@ def getDataForecasting(blob_service_client):
     folder_name = 'Employee'
 
     # Specify the blob name you want to process
-    blob_name = f'{folder_name}/Sales_Custom.json'
+    blob_name = f'{folder_name}/Customer_response.json'
 
     try:
         # Generate a shared access signature for the specified blob file
@@ -80,7 +80,7 @@ def main():
                 output_container_client.create_container()
 
             # Generate a unique name for the output blob
-            output_blob_name = 'Sales_Custom.csv'  # You can change the output file name as needed
+            output_blob_name = 'Customer_response.csv'  # You can change the output file name as needed
 
             # Convert DataFrame to CSV
             result_df.to_csv(output_blob_name, index=False)
